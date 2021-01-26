@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>ANASAYFA</h1>
+    <p>Sayfamıza hoş geldin!</p>
+    <p>
+        Merhaba @ViewBag.Name, şu an saat @ViewBag.Time
+       
+    </p>
+    @if (ViewBag.Time < 12)
+    {
+        <p>Günaydın</p>
+    }
+    else if (ViewBag.Time < 18)
+    {
+        <p>İyi Günler</p>
+    }
+    else if (ViewBag.Time < 20)
+    {
+        <p>İyi Akşamlar</p>
+    }
+    else
+    {
+        <p>İyi geceler</p>
+    }
+
+    <!-- Oluşturduğumuz ürünleri c# ile foreach kullanarak burada ekrana bastırabiliriz
+         at işareti koyarak yapılmalı
+    -->
+    <ul>
+        @foreach (var item in ViewBag.Products)
+        {
+            <li>@item</li>
+
+        }
+    </ul>
+
+
+</body>
+</html>
